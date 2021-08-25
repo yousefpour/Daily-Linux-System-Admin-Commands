@@ -1,0 +1,3 @@
+# Clear Container Logs
+for i in $(docker inspect --format='{{.LogPath}}' `docker ps --format 'CONTAINER ID : {{.ID}} | Name: {{.Names}} | Image:  {{.Image}} |  Ports: {{.Ports}}' | awk '{print $4}'`) ; do echo " " > "$i" ; done
+
