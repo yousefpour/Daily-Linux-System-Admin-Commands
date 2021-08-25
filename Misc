@@ -1,0 +1,3 @@
+# Find vhosts in some web server IP addresses
+for i in {10..20}; do echo $i ; curl -H "Host: domain.ir" https://192.168.0.$i/ -k -I --connect-timeout 1; done
+
